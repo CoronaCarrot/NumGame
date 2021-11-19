@@ -15,14 +15,10 @@ async def on_ready():
 
 
 @bot.command()
-async def number(ctx, min: int, max: int):
+async def number(ctx, min, max):
     global playing
     if ctx.message.author.id in playing:
         return
-    if str(min)[0] == "-":
-        min = int(min) - int(int(min) * 2)
-    if str(max)[0] == "-":
-        max = int(max) - int(int(max) * 2)
 
     if type(min) == str or type(max) == str:
         embed = discord.Embed(title=f"Number Game - Error",
@@ -40,6 +36,10 @@ async def number(ctx, min: int, max: int):
                                   description=f"Error Message: `The maximum is 1,000,000` \n**Usage** `{bot.command_prefix}number <min> <max>`",
                                   color=0xf87272)
             await ctx.send(embed=embed)
+        elif str(min)[0] == "-":
+            min = int(min) - int(int(min) * 2)
+        elif str(max)[0] == "-":
+            max = int(max) - int(int(max) * 2)
         else:
 
             if max < min or min > max:
