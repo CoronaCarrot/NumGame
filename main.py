@@ -20,6 +20,11 @@ async def number(ctx, min, max):
     if ctx.message.author.id in playing:
         return
 
+    if min.isnumeric():
+        min = int(min)
+    if max.isnumeric():
+        max = int(max)
+
     if type(min) == str or type(max) == str:
         embed = discord.Embed(title=f"Number Game - Error",
                               description=f"Error Message: `Min And Max Must Be Integers` \n**Usage** `{bot.command_prefix}number <min> <max>`",
@@ -47,7 +52,7 @@ async def number(ctx, min, max):
                 min = str(max)
                 max = str(t)
             embed = discord.Embed(title=f"Number Game - {int(min)} - {int(max)}",
-                                  description=f"I have thought of a number from {int(min)} - {int(max)}, try guess it in 9 attempts or less",
+                                  description=f"I have thought of a number from {int(min)} - {int(max)}",
                                   color=0x0081fa)
             edit = await ctx.send(embed=embed)
             panelid = edit.id
