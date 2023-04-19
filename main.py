@@ -130,24 +130,4 @@ async def number(ctx, min, max):
                     playing.remove(ctx.message.author.id)
 
 
-#      if counter == 9:
-#          print("Out of guesses! Game Over! The number was " + str(number) + "!")
-#          Guessed = True
-#          continue
-
-#      if userGuess == number:
-#          print("CONGRATULATIONS! The number was " + str(number) + "!")
-#          Guessed = True
-#      elif userGuess > 300:
-#          print("Your number is too high...")
-#      elif userGuess < 1:
-#          print("Your guess is too low...")
-#      elif userGuess < number and userGuess < 301 and userGuess > 0:
-#          print("Try guessing higher...")
-#          counter = counter + 1
-#      elif userGuess > number and userGuess < 301 and userGuess > 0:
-#          print("Try guessing lower...")
-#          counter = counter + 1
-
-
-bot.run("OTExMzU2NTc3NTQ0NTQwMTgw.YZgM9A.A2LW7XmxHM8ED3mR-3tTOLMSDLI")
+bot.run("TOKEN")
